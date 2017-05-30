@@ -221,6 +221,7 @@ else:
             ph_seq[sz_queue - 1] = ar1(arcoeff1, arcoeff2,
                                        ph_seq[sz_queue - 2], num=1)
             rph_t[:, nz_total - zi - 1] = np.interp(x_t, ph_xt, ph_seq) + rph
+        rph_t = np.exp(1j * rph_t)
 
 rph_t /= np.sqrt(np.mean(np.square(np.abs(rph_t))))
 # more factors for the diffraction integral
